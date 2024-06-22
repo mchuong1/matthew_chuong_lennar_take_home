@@ -52,7 +52,7 @@ const LandingPage = () => {
         </div>
         <p className="sub-text">
           Start your free 14-day trial, no credit card necessary.
-          By providing your email, you agree to our terms of service.
+          By providing your email, you agree to our <span style={{ color: 'white' }}>terms of service.</span>
         </p>
       </div>
       <div className="wrapper">
