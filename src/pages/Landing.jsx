@@ -4,18 +4,20 @@ import { useState } from "react";
 
 const LandingPage = () => {
   const [isDisabled, setDisabled] = useState(false);
-  const query = `
-    {
-      users {
-        data {
-          id
-          name
-          email
-        }
-      }
+  const mutation = `
+  mutation {
+    createUser(input: {
+      username: "New User",
+      name: "New User",
+      email: "newuser@example.com"
+    }) {
+      id
+      username
+      name
+      email
     }
-  `;
-  
+  }
+`;
   const handleClick = async () => {
     setDisabled(true);
     try {
@@ -24,7 +26,7 @@ const LandingPage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({ query: mutation }),
       })
       .then(response => response.json())
         .then(data => console.log(data.data.users.data));
