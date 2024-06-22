@@ -82,12 +82,7 @@ h1 div {
 .illustration {
   width: 100%;
   height: auto;
-  object-fit: cover;
-}
-
-.logo {
-  /* width: 40px;
-  height: 100%; */
+  /* object-fit: cover; */
 }
 
 .sub-text {
@@ -96,10 +91,6 @@ h1 div {
   font-weight: 400;
   line-height: 20px;
   text-align: left;
-}
-
-.main-content {
-
 }
 
 /* Tablet */
@@ -137,6 +128,11 @@ h1 div {
     z-index: -99;
     object-fit: none;
   }
+  h1 {
+    font-size: 48px;
+    line-height: 48px;
+    width: 392px;
+  }
 }
 
 /* Laptop */
@@ -158,6 +154,11 @@ h1 div {
     flex-direction: row;
     column-gap: 1em;
     width: 572px;
+  }
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+    width: 492px;
   }
 }
 
