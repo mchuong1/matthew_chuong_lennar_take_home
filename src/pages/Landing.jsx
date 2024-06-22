@@ -1,40 +1,7 @@
 import { Button, Chip, TextField } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { useState } from "react";
 
 const LandingPage = () => {
-  const [isDisabled, setDisabled] = useState(false);
-  const query = `
-    {
-      users {
-        data {
-          id
-          name
-          email
-        }
-      }
-    }
-  `;
-  
-  const handleClick = async () => {
-    setDisabled(true);
-    try {
-      await fetch('https://graphqlzero.almansi.me/api', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query }),
-      })
-      .then(response => response.json())
-        .then(data => console.log(data.data.users.data));
-      setDisabled(false);
-    } catch (error) {
-      setDisabled(false);
-      console.error('Error:', error);
-    }
-  }
-
   return (
     <div className="landing-root">
       <div className="main-content">
@@ -81,7 +48,7 @@ const LandingPage = () => {
               }
             }}
             />
-          <Button id="free-trial" style={{ backgroundColor: '#6366F1'}} className="button" variant="contained" onClick={handleClick} disabled={isDisabled}>Start Free Trial</Button>
+          <Button id="free-trial" style={{ backgroundColor: '#6366F1'}} className="button" variant="contained">Start Free Trial</Button>
         </div>
         <p className="sub-text">
           Start your free 14-day trial, no credit card necessary.

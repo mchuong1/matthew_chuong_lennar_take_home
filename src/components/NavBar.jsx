@@ -7,41 +7,10 @@ const NavBar = () => {
   const mobileSize = 820;
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < mobileSize);
-  const [isDisabled, setDisabled] = useState(false);
+
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-
-  const query = `
-    {
-      users {
-        data {
-          id
-          name
-          email
-        }
-      }
-    }
-  `;
-  
-  const handleClick = async () => {
-    setDisabled(true);
-    try {
-      await fetch('https://graphqlzero.almansi.me/api', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query }),
-      })
-      .then(response => response.json())
-        .then(data => console.log(data.data.users.data));
-      setDisabled(false);
-    } catch (error) {
-      setDisabled(false);
-      console.error('Error:', error);
-    }
-  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -80,15 +49,7 @@ const NavBar = () => {
           <ListItemButton>Company</ListItemButton>
         </ListItem>
         <ListItem>
-          <Button
-            onClick={handleClick}
-            disabled={isDisabled}
-            className="menu-button"
-            variant="contained"
-            style={{ backgroundColor: '#6366F1' }}
-          >
-            Start Free Trial
-          </Button>
+          <Button className="menu-button" variant="contained" style={{ backgroundColor: '#6366F1'}}>Start Free Trial</Button>
         </ListItem>
         <ListItem style={{ justifyContent: 'center' }}>
           Existing customer?
@@ -115,12 +76,11 @@ const NavBar = () => {
         Log in
       </Button>
       <Button
+        className="background-gray"
         variant="contained"
         style={{
           backgroundColor: "#4B5563"
         }}
-        onClick={handleClick}
-        disabled={isDisabled}
       >
         Start Free Trial
       </Button>
