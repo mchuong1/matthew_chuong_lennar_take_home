@@ -1,25 +1,13 @@
-body {
-  background-color: #111827;
-  /* font-style: Inter; */
-  font-family: Inter;
-  /* overflow: hidden; */
-}
-p {
-  color: #D1D5DB;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: left;
-}
-
-h1 {
-  color: white;
-  font-weight: 800;
-}
+/* TODO: */
+/* Add Hover css for button elements */
+/* Nav Items (Desktop), Hamburger Menu,  */
 
 h1 div {
   color: #818CF8;
+}
+
+.landing-root {
+  padding: 20px;
 }
 
 .close-icon {
@@ -81,16 +69,7 @@ h1 div {
 
 .illustration {
   width: 100%;
-  height: auto;
-  /* object-fit: cover; */
-}
-
-.sub-text {
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
+  height: 100%;
 }
 
 /* Tablet */
@@ -109,9 +88,6 @@ h1 div {
     column-gap: 1em;
     width: 509px;
   }
-  .sub-text {
-    width: 509px;
-  }
   #free-trial {
     width: 244px;
   }
@@ -128,11 +104,6 @@ h1 div {
     z-index: -99;
     object-fit: none;
   }
-  h1 {
-    font-size: 48px;
-    line-height: 48px;
-    width: 392px;
-  }
 }
 
 /* Laptop */
@@ -145,20 +116,14 @@ h1 div {
   .illustration {
     position: absolute;
     right: -22em;
-    top: -5em;
+    top: 0em;
     z-index: -99;
-    object-fit: none;
   }
   .field-container {
     display: flex;
     flex-direction: row;
     column-gap: 1em;
     width: 572px;
-  }
-  h1 {
-    font-size: 60px;
-    line-height: 60px;
-    width: 492px;
   }
 }
 
@@ -182,23 +147,15 @@ h1 div {
   .email {
     width: 100%;
   }
-  h1 {
-    font-size: 72px;
-    line-height: 72px;
-    width: 592px;
-  }
   p {
     font-size: 24px;
     line-height: 28px;
   }
-  .sub-text {
-    font-size: 14px;
-    line-height: 20px;
-  }
   .illustration {
     right: -22em;
-    top: -10em;
+    top: 3em;
     z-index: -99;
+    position: absolute;
   }
 }
 

@@ -1,27 +1,23 @@
-import { useEffect, useState } from "react";
-import { Box, Button, Drawer, IconButton, List, ListItem, ListItemButton } from "@mui/material";
+import { useState } from "react";
+import { Box, Button, Drawer, IconButton, List, ListItem, ListItemButton, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 const NavBar = () => {
-  const mobileSize = 820;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < mobileSize);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < mobileSize);
-    };
-    window.addEventListener('resize', handleResize);
-    // Clean up function
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const navItems = [
+    { name: 'Product' },
+    { name: 'Features' },
+    { name: 'Marketplace' },
+    { name: 'Company' },
+  ]
 
   const DrawerList = (
     <Box sx={{ width: 'auto' }} role="presentation">
@@ -29,42 +25,39 @@ const NavBar = () => {
         <ListItem>
           <div className="nav-container">
             <div>
-              <img className="logo" src="./src/assets/Logo.png" />
+              <img className="logo" src="./src/assets/Logo.png" alt="logo" />
             </div>
             <IconButton onClick={toggleDrawer(false)}>
-              <CloseIcon onClick={toggleDrawer(false)} />
+              <CloseIcon />
             </IconButton>
           </div>
         </ListItem>
+        {navItems.map((item, index) => (
+          <ListItem key={index}>
+            <ListItemButton>{item.name}</ListItemButton>
+          </ListItem>
+        ))}
         <ListItem>
-          <ListItemButton>Product</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>Features</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>Marketplace</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>Company</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <Button className="menu-button" variant="contained" style={{ backgroundColor: '#6366F1'}}>Start Free Trial</Button>
+          <Button className="menu-button" variant="contained" color="primary">Start Free Trial</Button>
         </ListItem>
         <ListItem style={{ justifyContent: 'center' }}>
           Existing customer?
-          <Button>Login</Button>
+          <Button color="secondary" >Login</Button>
         </ListItem>
       </List>
     </Box>
   );
   const NavMenu = () => (
-    <div style={{ display: 'flex', color: 'white', columnGap: '10px', alignItems: 'center' }}>
-      <img className="logo" src="./src/assets/Logo.png" />
-      <h2>Product</h2>
-      <h2>Features</h2>
-      <h2>Marketplace</h2>
-      <h2>Company</h2>
+    // change inline-style to class name
+    <div style={{ display: 'flex', color: 'white', alignItems: 'center' }}>
+      <img className="logo" src="./src/assets/Logo.png" alt="logo"/>
+      <List style={{ display: "flex" }}>
+        {navItems.map((item, index) => (
+          <ListItem key={index}>
+            <ListItemButton>{item.name}</ListItemButton>
+          </ListItem>
+        ))}
+      </List>
     </div>
   );
 
@@ -78,9 +71,7 @@ const NavBar = () => {
       <Button
         className="background-gray"
         variant="contained"
-        style={{
-          backgroundColor: "#4B5563"
-        }}
+        color="secondary"
       >
         Start Free Trial
       </Button>
@@ -91,7 +82,7 @@ const NavBar = () => {
     <div className="nav-root">
       <div className="nav-container">
         {isMobile
-          ? <img className="logo" src="./src/assets/Logo.png" />
+          ? <img className="logo" src="./src/assets/Logo.png" alt="logo"/>
           : (<div>
               <NavMenu />
             </div>)
@@ -114,6 +105,7 @@ const NavBar = () => {
             margin: '10px',
             padding: '10px',
             borderRadius: '10px',
+            backgroundColor: 'white',
           }
         }}
       >

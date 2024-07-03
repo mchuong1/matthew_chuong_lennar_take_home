@@ -1,4 +1,4 @@
-import { Button, Chip, TextField } from "@mui/material";
+import { Button, Chip, TextField, Typography } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const LandingPage = () => {
@@ -27,15 +27,15 @@ const LandingPage = () => {
           />
           <ChevronRightIcon className="right-arrow"/>
         </div>
-        <h1>
-          A better way 
+        <Typography variant="h1">
+          A better way to
           <div>
-            to ship web apps
+            ship web apps
           </div>
-        </h1>
-        <p>
+        </Typography>
+        <Typography variant="subtitle1">
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
-        </p>
+        </Typography>
         <div className="field-container">
           <TextField
             className="email"
@@ -48,15 +48,15 @@ const LandingPage = () => {
               }
             }}
             />
-          <Button id="free-trial" style={{ backgroundColor: '#6366F1'}} className="button" variant="contained">Start Free Trial</Button>
+          <Button id="free-trial" color="primary" className="button" variant="contained">Start Free Trial</Button>
         </div>
-        <p className="sub-text">
+        <Typography variant="subtitle2">
           Start your free 14-day trial, no credit card necessary.
           By providing your email, you agree to our <span style={{ color: 'white' }}>terms of service.</span>
-        </p>
+        </Typography>
       </div>
       <div className="wrapper">
-        <img className="illustration" src="./src/assets/Illustration.png" />
+        <img className="illustration" src="./src/assets/Illustration.png" alt="illustration" />
       </div>
     </div>
   ); 
