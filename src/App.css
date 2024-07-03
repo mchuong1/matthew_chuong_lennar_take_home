@@ -3,12 +3,6 @@
 /* Nav Items (Desktop), Hamburger Menu,  */
 /* */
 
-
-body {
-  background-color: #111827;
-  font-family: Inter;
-  overflow-x: hidden;
-}
 p {
   color: #D1D5DB;
   font-family: Inter;
@@ -132,11 +126,6 @@ h1 div {
     z-index: -99;
     object-fit: none;
   }
-  h1 {
-    font-size: 48px;
-    line-height: 48px;
-    width: 392px;
-  }
 }
 
 /* Laptop */
@@ -157,11 +146,6 @@ h1 div {
     flex-direction: row;
     column-gap: 1em;
     width: 572px;
-  }
-  h1 {
-    font-size: 60px;
-    line-height: 60px;
-    width: 492px;
   }
 }
 
@@ -184,11 +168,6 @@ h1 div {
   }
   .email {
     width: 100%;
-  }
-  h1 {
-    font-size: 72px;
-    line-height: 72px;
-    width: 592px;
   }
   p {
     font-size: 24px;

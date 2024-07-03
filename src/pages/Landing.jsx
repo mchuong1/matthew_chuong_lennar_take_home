@@ -1,4 +1,4 @@
-import { Button, Chip, TextField } from "@mui/material";
+import { Button, Chip, TextField, Typography } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const LandingPage = () => {
@@ -27,12 +27,12 @@ const LandingPage = () => {
           />
           <ChevronRightIcon className="right-arrow"/>
         </div>
-        <h1>
+        <Typography variant="h1">
           A better way to
           <div>
             ship web apps
           </div>
-        </h1>
+        </Typography>
         <p>
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
         </p>
