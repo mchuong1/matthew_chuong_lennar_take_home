@@ -33,9 +33,9 @@ const LandingPage = () => {
             ship web apps
           </div>
         </Typography>
-        <p>
+        <Typography variant="subtitle1">
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
-        </p>
+        </Typography>
         <div className="field-container">
           <TextField
             className="email"
@@ -50,10 +50,10 @@ const LandingPage = () => {
             />
           <Button id="free-trial" color="primary" className="button" variant="contained">Start Free Trial</Button>
         </div>
-        <p className="sub-text">
+        <Typography variant="subtitle2">
           Start your free 14-day trial, no credit card necessary.
           By providing your email, you agree to our <span style={{ color: 'white' }}>terms of service.</span>
-        </p>
+        </Typography>
       </div>
       <div className="wrapper">
         <img className="illustration" src="./src/assets/Illustration.png" />

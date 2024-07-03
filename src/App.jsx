@@ -36,7 +36,8 @@ const theme = {
     ...defaultTheme.typography,
     h1: {
       fontSize: '2.5rem',
-      fontWeight: 700,
+      fontWeight: 800,
+      color: 'white',
       [defaultTheme.breakpoints.up('sm')]: {
         fontSize: '48px',
         lineHeight: '48px',
@@ -53,8 +54,42 @@ const theme = {
         width: '592px',
       },
     },
-  },
-}
+    subtitle1: {
+      fontSize: '16px',
+      lineHeight: '24px',
+      color: '#D1D5DB',
+      fontWeight: 400,
+      textAlign: 'left',
+      margin: '16px 0',
+      [defaultTheme.breakpoints.up('sm')]: {
+        fontSize: '16px',
+        lineHeight: '24px',
+      },
+      [defaultTheme.breakpoints.up('md')]: {
+        fontSize: '16px',
+        lineHeight: '24px',
+      },
+      [defaultTheme.breakpoints.up('lg')]: {
+        fontSize: '24px',
+        lineHeight: '28px',
+      },
+      [defaultTheme.breakpoints.up('xl')]: {
+        fontSize: '24px',
+        lineHeight: '28px',
+      },
+    },
+    subtitle2: {
+      fontSize: '14px',
+      lineHeight: '20px',
+      color: '#D1D5DB',
+      margin: '16px 0',
+      textAlign: 'left',
+      [defaultTheme.breakpoints.up('sm')]: {
+        width: '509px',
+      },
+    }
+  }
+};
 
 function App() {
 
