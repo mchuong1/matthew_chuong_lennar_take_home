@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Box, Button, Drawer, IconButton, List, ListItem, ListItemButton } from "@mui/material";
+import { Box, Button, Drawer, IconButton, List, ListItem, ListItemButton, useTheme } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 const NavBar = () => {
-  const mobileSize = 820;
+  const theme = useTheme();
+  const mobileSize = theme.breakpoints.values.sm;
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < mobileSize);
 
