@@ -28,6 +28,15 @@ const defaultTheme = createTheme({
   typography: {
     fontFamily: 'Inter, sans-serif',
   },
+  components: {
+    MuiModal: {
+      styleOverrides: {
+        backdrop: {
+          backgroundColor: 'rgba(107, 114, 128, 0.5)', // Change this to your desired color
+        },
+      },
+    },
+  },
 });
 
 const theme = {

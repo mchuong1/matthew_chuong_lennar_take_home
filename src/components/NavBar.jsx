@@ -28,7 +28,7 @@ const NavBar = () => {
               <img className="logo" src="./src/assets/Logo.png" alt="logo" />
             </div>
             <IconButton onClick={toggleDrawer(false)}>
-              <CloseIcon onClick={toggleDrawer(false)} />
+              <CloseIcon />
             </IconButton>
           </div>
         </ListItem>
@@ -105,6 +105,7 @@ const NavBar = () => {
             margin: '10px',
             padding: '10px',
             borderRadius: '10px',
+            backgroundColor: 'white',
           }
         }}
       >
