@@ -23,6 +23,13 @@ const NavBar = () => {
     };
   }, []);
 
+  const navItems = [
+    { name: 'Product' },
+    { name: 'Features' },
+    { name: 'Marketplace' },
+    { name: 'Company' },
+  ]
+
   const DrawerList = (
     <Box sx={{ width: 'auto' }} role="presentation">
       <List>
@@ -36,35 +43,30 @@ const NavBar = () => {
             </IconButton>
           </div>
         </ListItem>
+        {navItems.map((item, index) => (
+          <ListItem key={index}>
+            <ListItemButton>{item.name}</ListItemButton>
+          </ListItem>
+        ))}
         <ListItem>
-          <ListItemButton>Product</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>Features</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>Marketplace</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>Company</ListItemButton>
-        </ListItem>
-        <ListItem>
-          <Button className="menu-button" variant="contained" style={{ backgroundColor: '#6366F1'}}>Start Free Trial</Button>
+          <Button className="menu-button" variant="contained" color="primary">Start Free Trial</Button>
         </ListItem>
         <ListItem style={{ justifyContent: 'center' }}>
           Existing customer?
-          <Button>Login</Button>
+          <Button color="secondary" >Login</Button>
         </ListItem>
       </List>
     </Box>
   );
   const NavMenu = () => (
-    <div style={{ display: 'flex', color: 'white', columnGap: '10px', alignItems: 'center' }}>
+    // change inline-style to class name
+    <div style={{ display: 'flex', color: 'white', columnGap: '30px', alignItems: 'center' }}>
       <img className="logo" src="./src/assets/Logo.png" />
-      <h2>Product</h2>
-      <h2>Features</h2>
-      <h2>Marketplace</h2>
-      <h2>Company</h2>
+      {navItems.map((item, index) => (
+        <h3 key={index}>
+          {item.name}
+        </h3>
+      ))}
     </div>
   );
 
@@ -78,9 +80,7 @@ const NavBar = () => {
       <Button
         className="background-gray"
         variant="contained"
-        style={{
-          backgroundColor: "#4B5563"
-        }}
+        color="secondary"
       >
         Start Free Trial
       </Button>

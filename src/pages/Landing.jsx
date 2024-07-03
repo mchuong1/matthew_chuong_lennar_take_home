@@ -48,7 +48,7 @@ const LandingPage = () => {
               }
             }}
             />
-          <Button id="free-trial" style={{ backgroundColor: '#6366F1'}} className="button" variant="contained">Start Free Trial</Button>
+          <Button id="free-trial" color="primary" className="button" variant="contained">Start Free Trial</Button>
         </div>
         <p className="sub-text">
           Start your free 14-day trial, no credit card necessary.
