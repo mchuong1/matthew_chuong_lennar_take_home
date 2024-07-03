@@ -28,9 +28,9 @@ const LandingPage = () => {
           <ChevronRightIcon className="right-arrow"/>
         </div>
         <h1>
-          A better way 
+          A better way to
           <div>
-            to ship web apps
+            ship web apps
           </div>
         </h1>
         <p>
