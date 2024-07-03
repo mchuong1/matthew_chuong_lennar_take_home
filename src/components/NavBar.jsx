@@ -60,13 +60,15 @@ const NavBar = () => {
   );
   const NavMenu = () => (
     // change inline-style to class name
-    <div style={{ display: 'flex', color: 'white', columnGap: '30px', alignItems: 'center' }}>
+    <div style={{ display: 'flex', color: 'white', alignItems: 'center' }}>
       <img className="logo" src="./src/assets/Logo.png" />
-      {navItems.map((item, index) => (
-        <h3 key={index}>
-          {item.name}
-        </h3>
-      ))}
+      <List style={{ display: "flex" }}>
+        {navItems.map((item, index) => (
+          <ListItem key={index}>
+            <ListItemButton>{item.name}</ListItemButton>
+          </ListItem>
+        ))}
+      </List>
     </div>
   );
 
