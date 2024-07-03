@@ -1,28 +1,16 @@
-import { useEffect, useState } from "react";
-import { Box, Button, Drawer, IconButton, List, ListItem, ListItemButton, useTheme } from "@mui/material";
+import { useState } from "react";
+import { Box, Button, Drawer, IconButton, List, ListItem, ListItemButton, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 const NavBar = () => {
   const theme = useTheme();
-  const mobileSize = theme.breakpoints.values.sm;
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < mobileSize);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < mobileSize);
-    };
-    window.addEventListener('resize', handleResize);
-    // Clean up function
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const navItems = [
     { name: 'Product' },
