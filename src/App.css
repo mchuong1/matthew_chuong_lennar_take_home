@@ -1,8 +1,13 @@
+/* TODO: */
+/* Add Hover css for button elements */
+/* Nav Items (Desktop), Hamburger Menu,  */
+/* */
+
+
 body {
   background-color: #111827;
-  /* font-style: Inter; */
   font-family: Inter;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 p {
   color: #D1D5DB;
@@ -82,7 +87,6 @@ h1 div {
 .illustration {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
 }
 
 .sub-text {
@@ -147,7 +151,6 @@ h1 div {
     right: -22em;
     top: 0em;
     z-index: -99;
-    object-fit: none;
   }
   .field-container {
     display: flex;
@@ -199,6 +202,7 @@ h1 div {
     right: -22em;
     top: 3em;
     z-index: -99;
+    position: absolute;
   }
 }
 
