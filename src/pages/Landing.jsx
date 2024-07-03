@@ -56,7 +56,7 @@ const LandingPage = () => {
         </Typography>
       </div>
       <div className="wrapper">
-        <img className="illustration" src="./src/assets/Illustration.png" />
+        <img className="illustration" src="./src/assets/Illustration.png" alt="illustration" />
       </div>
     </div>
   ); 

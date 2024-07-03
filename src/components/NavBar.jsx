@@ -25,7 +25,7 @@ const NavBar = () => {
         <ListItem>
           <div className="nav-container">
             <div>
-              <img className="logo" src="./src/assets/Logo.png" />
+              <img className="logo" src="./src/assets/Logo.png" alt="logo" />
             </div>
             <IconButton onClick={toggleDrawer(false)}>
               <CloseIcon onClick={toggleDrawer(false)} />
@@ -50,7 +50,7 @@ const NavBar = () => {
   const NavMenu = () => (
     // change inline-style to class name
     <div style={{ display: 'flex', color: 'white', alignItems: 'center' }}>
-      <img className="logo" src="./src/assets/Logo.png" />
+      <img className="logo" src="./src/assets/Logo.png" alt="logo"/>
       <List style={{ display: "flex" }}>
         {navItems.map((item, index) => (
           <ListItem key={index}>
@@ -82,7 +82,7 @@ const NavBar = () => {
     <div className="nav-root">
       <div className="nav-container">
         {isMobile
-          ? <img className="logo" src="./src/assets/Logo.png" />
+          ? <img className="logo" src="./src/assets/Logo.png" alt="logo"/>
           : (<div>
               <NavMenu />
             </div>)
